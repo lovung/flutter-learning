@@ -3,6 +3,15 @@
 
 ## Basic about dart:
 ### Basic syntax:
+- comments
+- semicolon
+- whitespace/line break
+- block code
+
+### Variables:
+- var
+- final
+- const
 
 ### [Operaters](https://www.w3adda.com/dart-tutorial/dart-operators):
 - arithmetic
