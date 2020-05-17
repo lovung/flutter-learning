@@ -12,6 +12,7 @@
 - var
 - final
 - const
+- dynamic
 
 ### [Operaters](https://www.w3adda.com/dart-tutorial/dart-operators):
 - arithmetic
