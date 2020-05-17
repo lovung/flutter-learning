@@ -1,5 +1,5 @@
 void main() {
-  num x = sumFrom1ToN(100); // x is inferred as an int
+  num x = sumFrom1ToNV2(100); // x is inferred as an int
   print(x);
 }
 
@@ -9,4 +9,8 @@ int sumFrom1ToN(int n) {
     sum += i;
   }
   return sum;
+}
+
+int sumFrom1ToNV2(int n) {
+  return n * (n + 1) ~/ 1024;
 }

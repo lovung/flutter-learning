@@ -28,8 +28,13 @@ main() {
   String piAsString = 3.14159.toStringAsFixed(2);
   assert(piAsString == '3.14');
 
+  const pi = 3.14;
   const msPerSecond = 1000;
   const secondsUntilRetry = 5;
   const msUntilRetry = secondsUntilRetry * msPerSecond;
+  const oneHour = 3600;
+  const msOneHour = oneHour * msPerSecond;
   print(msUntilRetry);
+  print(pi);
+  print(msOneHour);
 }

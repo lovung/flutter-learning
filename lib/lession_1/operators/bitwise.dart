@@ -1,5 +1,5 @@
 void main() {
-  var num1 = 40;
+  var num1 = 7;
   var num2 = 5;
   var num3 = 0;
   print("Dart Bitwise Operators");
@@ -18,9 +18,9 @@ void main() {
 
   //Binary Left Shift Operator
   num3 = num1 << 2;
-  print("num1 << 1 = ${num3}");
+  print("num1 << 2 = $num3");
 
   //Binary Right Shift Operator
   num3 = num1 >> 2;
-  print("num1 >> 1  = ${num3}");
+  print("num1 >> 2  = $num3");
 }
