@@ -38,8 +38,19 @@
 - switch case
 - for loop
 - break/continue
+- function / arrow syntax
+- exceptions
 
-### Functions:
+### Class:
+- Getters and setters
+- Contructors (named, factory, redirecting, const)
+- Cascades
+- Parameters
+- this
 
+### Asynchronous programming:
+- Future
+- Async/await
+- Stream
 
 

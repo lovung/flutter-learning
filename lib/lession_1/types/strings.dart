@@ -1,7 +1,7 @@
 void main() {
   var s1 = 'Single quotes work well for string literals.';
   var s2 = "Double quotes work just as well.";
-  var s3 = 'It\'s easy to escape the string delimiter.';
+  var s3 = 'It\'s easy to \$ escape the string delimiter.';
   var s4 = "It's even easier to use \nthe other delimiter.";
 
   print(s1);
@@ -54,4 +54,9 @@ multi-line string.""";
 
   const validConstString = '$aConstNum $aConstBool $aConstString';
   // const invalidConstString = '$aNum $aBool $aString $aConstList';
+
+  print(s2.codeUnits);
+  print(s2.isEmpty);
+  print(s2.isNotEmpty);
+  print(s2.length);
 }

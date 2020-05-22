@@ -25,7 +25,7 @@ main() {
   assert(oneAsString == '1');
 
   // double -> String
-  String piAsString = 3.14159.toStringAsFixed(2);
+  String piAsString = 3.141591231232.toStringAsFixed(2);
   assert(piAsString == '3.14');
 
   const pi = 3.14;
