@@ -10,7 +10,8 @@ void main(List<String> args) {
   print(constantList[1]);
   // constantList[1] = 1; // Uncommenting this causes an error.
 
-  var list2 = [0, ...list];
+  List<int> list2 = [0, ...list];
+
   assert(list2.length == 4);
   print("List 2: $list2");
 
@@ -20,7 +21,14 @@ void main(List<String> args) {
   print("List 4: $list4");
 
   var listOfInts = [1, 2, 3];
-  var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
+  List<String> listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
   assert(listOfStrings[1] == '#1');
   print("listOfStrings: $listOfStrings");
+
+  listOfStrings.addAll(list.map((e) => '#${e.toString()}').toList());
+
+  print("listOfStrings length: ${listOfStrings.length}");
+  print("listOfStrings: $listOfStrings");
+  print(listOfStrings.any((element) => element.contains('1')));
+  print(listOfStrings.every((element) => element.contains('#')));
 }
