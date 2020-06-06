@@ -12,7 +12,7 @@ void main(List<String> args) {
 
   List<int> list2 = [0, ...list];
 
-  assert(list2.length == 4);
+  assert(list2.length == 5);
   print("List 2: $list2");
 
   var list3;
