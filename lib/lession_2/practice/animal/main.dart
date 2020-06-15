@@ -1,4 +1,4 @@
-class ZooAnimal {
+class ZooAnimal extends Object {
   int posX;
   int posY;
 
