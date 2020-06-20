@@ -27,6 +27,24 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  JobModel model;
+  @override
+  void initState() {
+    model = JobModel(
+      title: 'Senior Software Engineer',
+      companyName: 'Zalo - VNG',
+      address: 'Quận 7 - TP.HCM',
+      createdAt: DateTime(2020, 5, 1),
+      type: 'Fulltime',
+      salaryRange: '\$2000 - \$3000',
+      status: 'Applied',
+      logoURL:
+          'https://brasol.vn/public/ckeditor/uploads/tin-tuc/brasol.vn-logo-zalo-vector-logo-zalo-vector.png',
+      isBookmarked: true,
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: <Widget>[
-            JobCard(),
+            JobCard(model),
           ],
         ),
       ),
@@ -45,7 +63,35 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+class JobModel extends Object {
+  String title;
+  String companyName;
+  String address;
+  String salaryRange;
+  DateTime createdAt;
+  String type;
+  String status;
+  bool isBookmarked;
+  String logoURL;
+
+  JobModel({
+    this.title,
+    this.address,
+    this.companyName,
+    this.createdAt,
+    this.salaryRange,
+    this.status,
+    this.type,
+    this.isBookmarked,
+    this.logoURL,
+  });
+}
+
 class JobCard extends StatelessWidget {
+  final JobModel model;
+
+  JobCard(this.model);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -60,9 +106,9 @@ class JobCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Flexible(flex: 1, child: JobCardHead()),
+            Flexible(flex: 1, child: JobCardHead(model)),
             Container(width: 15, height: 50),
-            Flexible(flex: 4, child: JobCardTail()),
+            Flexible(flex: 4, child: JobCardTail(model)),
           ],
         ),
       ),
@@ -71,6 +117,10 @@ class JobCard extends StatelessWidget {
 }
 
 class JobCardTail extends StatelessWidget {
+  final JobModel model;
+
+  JobCardTail(this.model);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -80,7 +130,7 @@ class JobCardTail extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 2, bottom: 5),
           child: Text(
-            '''Software Enginner''',
+            model.title,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
@@ -92,7 +142,7 @@ class JobCardTail extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 2, bottom: 3),
           child: Text(
-            '''Zalo - VNG''',
+            model.companyName,
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w300,
@@ -102,7 +152,7 @@ class JobCardTail extends StatelessWidget {
         ),
         IconInfo(
           iconData: Icons.pin_drop,
-          description: '''Quận 7, TP. Hồ Chí Minh, Việt Nam''',
+          description: model.address,
           color: Color(0xFF999999),
         ),
         Row(
@@ -113,12 +163,13 @@ class JobCardTail extends StatelessWidget {
               children: <Widget>[
                 IconInfo(
                   iconData: Icons.timer,
-                  description: '''2 days ago''',
+                  description:
+                      '${DateTime.now().difference(model.createdAt).inDays} days ago',
                   color: Colors.grey[700],
                 ),
                 IconInfo(
                   iconData: Icons.layers,
-                  description: '''Fulltime''',
+                  description: model.type,
                   color: Colors.grey[700],
                 ),
               ],
@@ -127,12 +178,12 @@ class JobCardTail extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 IconInfo(
-                  description: '''\$2000 - \$3000''',
+                  description: model.salaryRange,
                   color: Color(0xFF00C48C),
                 ),
                 IconInfo(
                   iconData: Icons.check,
-                  description: '''APPLIED''',
+                  description: model.status,
                   color: Color(0x8800C48C),
                 ),
               ],
@@ -185,13 +236,17 @@ class IconInfo extends StatelessWidget {
 }
 
 class JobCardHead extends StatelessWidget {
+  final JobModel model;
+
+  JobCardHead(this.model);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CompanyLogo(
-          'https://dexibell.com/app/uploads/2018/05/facebook-logo.png',
+          model.logoURL,
           size: 60,
           borderRadius: 15,
         ),
@@ -199,7 +254,7 @@ class JobCardHead extends StatelessWidget {
         Icon(
           Icons.bookmark_border,
           size: 30,
-          color: Color(0xFF4EAEFF),
+          color: model.isBookmarked ? Color(0xFF4EAEFF) : Colors.black54,
         ),
       ],
     );
