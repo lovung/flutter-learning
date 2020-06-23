@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
       address: 'Quận 7 - TP.HCM',
       createdAt: DateTime(2020, 5, 1),
       type: 'Fulltime',
-      salaryRange: '\$2000 - \$3000',
+      salaryRange: '\$1500 - \$3000',
       status: 'Applied',
       logoURL:
           'https://brasol.vn/public/ckeditor/uploads/tin-tuc/brasol.vn-logo-zalo-vector-logo-zalo-vector.png',
