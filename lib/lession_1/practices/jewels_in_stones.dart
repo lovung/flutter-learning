@@ -2,10 +2,10 @@
 //        Stones = "AABBBBB"
 // // Output: 5
 main(List<String> args) {
-  var Jewels = "aaabbb";
-  var Stones = "AABBBBB";
-  countFunction(Jewels, Stones.toLowerCase());
-  print(Jewels);
+  var jewels = "aaabbb";
+  var stones = "AABBBBB";
+  countFunction(jewels, stones.toLowerCase());
+  print(jewels);
 }
 
 int countFunction(String a, String b, [String c = "default"]) {

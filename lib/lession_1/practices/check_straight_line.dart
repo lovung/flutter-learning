@@ -19,7 +19,6 @@ void main(List<String> args) {
 }
 
 bool checkStraightLine(List<Point> points) {
-  // TODO: Code here
   bool checkValue;
   return checkValue;
 }

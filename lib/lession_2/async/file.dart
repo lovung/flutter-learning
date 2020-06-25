@@ -1,5 +1,3 @@
-import 'dart:io';
-
 void main() async {
   // prompt for user input
   // print("Enter your favourite color :");
@@ -12,6 +10,6 @@ void main() async {
 }
 
 Future<int> printTick() async {
-  var response = await Future.delayed(Duration(seconds: 5)); // Call API
+  await Future.delayed(Duration(seconds: 5)); // Call API
   return Future.value(10);
 }

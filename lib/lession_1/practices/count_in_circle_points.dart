@@ -14,4 +14,6 @@ main(List<String> args) {
   print(countInCirclePoints(listPoint, r));
 }
 
-int countInCirclePoints(List<Point> points, double r) {}
+int countInCirclePoints(List<Point> points, double r) => points
+    .where((element) => element.x * element.x + element.y * element.y <= r * r)
+    .length;

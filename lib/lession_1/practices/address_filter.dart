@@ -5,6 +5,7 @@ String printAddress(Map<String, dynamic> address) {
     district: address["district"],
     city: address["city"],
   );
+  return "";
 }
 
 String filterAddress({
@@ -17,5 +18,5 @@ String filterAddress({
   final districtStr = "${district.isNotEmpty ? "$district -" : ""}";
   final wardStr = "${ward.isNotEmpty ? "$ward -" : ""}";
   final streetStr = "${street.isNotEmpty ? "$street -" : ""}";
-  return "";
+  return streetStr + wardStr + districtStr + cityStr;
 }
